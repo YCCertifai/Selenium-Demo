@@ -14,6 +14,12 @@ import java.util.concurrent.TimeUnit;
 public class TutorialScript1 {
 
     public static void main(String[] args) throws InterruptedException {
+
+        /**
+         * To do: install chrome webdriver.
+         * refer to slides
+         */
+
         //instantiate chrome driver
         WebDriver driver = new ChromeDriver();
 
@@ -23,6 +29,7 @@ public class TutorialScript1 {
         //maximize window
         driver.manage().window().maximize();
 
+        //for demo only
         Thread.sleep(2000);
 
         //exit

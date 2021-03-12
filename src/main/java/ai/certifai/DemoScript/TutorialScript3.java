@@ -56,9 +56,11 @@ public class TutorialScript3 {
 
         List<String> imageSourceList = new ArrayList<>();
 
+        int counter = 10;
+
         for (WebElement img : driver.findElements(resultImages))
         {
-            actions.moveToElement(img).click();
+            actions.click(img).perform();
 
             //time to load image
             try{
@@ -67,6 +69,10 @@ public class TutorialScript3 {
                 e.printStackTrace();
             }
 
+            if (counter-- == 0)
+            {
+                break;
+            }
 
             imageSourceList.add(wait.until(d -> d.findElement(imageSource)).getAttribute("src"));
         }

@@ -17,7 +17,6 @@ public class TutorialScript2 {
     public static void main(String[] args) throws InterruptedException {
         //instantiate chrome driver
         WebDriver driver = new ChromeDriver();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
 
         //go to google.com
         driver.get("https://www.google.com/");
