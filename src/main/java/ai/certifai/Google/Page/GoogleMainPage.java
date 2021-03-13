@@ -7,9 +7,10 @@ import org.openqa.selenium.WebDriver;
 
 public class GoogleMainPage extends BasePage {
 
-    private By input = By.cssSelector("input[type='text']");
+    private final By INPUT = By.cssSelector("INPUT[type='text']");
 
     private final String URL = "https://www.google.com/";
+
     public GoogleMainPage(WebDriver driver)
     {
         super(driver);
@@ -18,7 +19,7 @@ public class GoogleMainPage extends BasePage {
 
     public GoogleSearchResultPage search(String query)
     {
-        keyIn(input, query + Keys.RETURN);
+        keyIn(INPUT, query + Keys.RETURN);
         return new GoogleSearchResultPage(driver);
     }
 }

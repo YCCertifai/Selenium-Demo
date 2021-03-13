@@ -10,9 +10,9 @@ import java.util.List;
 
 public class GoogleSearchImagePage extends BasePage {
 
-    private final By resultIndicator = By.xpath("//div[@class='DwpMZe ']");
-    private final By resultImages = By.xpath("//img[@class='rg_i Q4LuWd']");
-    private final By imageSource = By.cssSelector("div.BIB1wf img.n3VNCb");
+    private final By RESULT_INDICATOR = By.xpath("//div[@class='DwpMZe ']");
+    private final By RESULT_IMAGES = By.xpath("//img[@class='rg_i Q4LuWd']");
+    private final By IMAGE_SOURCE = By.cssSelector("div.BIB1wf img.n3VNCb");
 
     public GoogleSearchImagePage(WebDriver driver)
     {
@@ -27,7 +27,7 @@ public class GoogleSearchImagePage extends BasePage {
             js.executeScript("window.scrollTo(0,"+ height + ")");
 
             if (loadStatus() == 0 && curHeight == height){
-                click(resultIndicator);
+                click(RESULT_INDICATOR);
             }
         } while (loadStatus() != 1);
     }
@@ -38,7 +38,7 @@ public class GoogleSearchImagePage extends BasePage {
     public int loadStatus()
     {
         String statusAttribute = "data-status";
-        String status = getAttribute(resultIndicator, statusAttribute);
+        String status = getAttribute(RESULT_INDICATOR, statusAttribute);
         if (status.equals("3")) return 1;
         else if (status.equals("5")) return 0;
         else return -1;
@@ -48,7 +48,7 @@ public class GoogleSearchImagePage extends BasePage {
 
         List<String> outputList = new ArrayList<>();
 
-        for (WebElement img : findElements(resultImages))
+        for (WebElement img : findElements(RESULT_IMAGES))
         {
 
             actions.moveToElement(img).click().perform();
@@ -60,7 +60,7 @@ public class GoogleSearchImagePage extends BasePage {
                 e.printStackTrace();
             }
 
-            outputList.add(getAttribute(imageSource, "src"));
+            outputList.add(getAttribute(IMAGE_SOURCE, "src"));
         }
 
         return outputList;

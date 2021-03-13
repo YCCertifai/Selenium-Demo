@@ -24,15 +24,19 @@ public class TutorialScript2 {
         //maximize window
         driver.manage().window().maximize();
 
+        //define input textbox
         By input = By.cssSelector("input[type='text']");
 
-        driver.findElement(input).sendKeys("adidas" + Keys.RETURN);
+        //key in values into input textbox
+        driver.findElement(input).sendKeys("skymind" + Keys.RETURN);
 
+        //define image button in result page
         By imageBtn = By.xpath("//div[@class='MUFPAc']//child::a[contains(text(),'Images')]");
 
         //find the image button and click
         driver.findElement(imageBtn).click();
 
+        //for demo purpose only
         Thread.sleep(3000);
 
         //exit

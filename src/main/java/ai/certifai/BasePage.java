@@ -36,6 +36,7 @@ public abstract class BasePage {
     }
 
     public void click(By element){
+        //do not click instantly, may cause unexpected conditions
         try{
             Thread.sleep(500);
         }catch (InterruptedException e) {
@@ -61,10 +62,5 @@ public abstract class BasePage {
     public String getTitle()
     {
         return driver.getTitle();
-    }
-
-    public void test()
-    {
-        actions.doubleClick().click().build().perform();
     }
 }

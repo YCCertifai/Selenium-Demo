@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class GoogleSearchResultPage extends BasePage {
 
-    private By imageButton = By.xpath("//div[@class='MUFPAc']//child::a[contains(text(),'Images')]");
+    private final By IMAGE_BUTTON = By.xpath("//div[@class='MUFPAc']//child::a[contains(text(),'Images')]");
 
     public GoogleSearchResultPage(WebDriver driver)
     {
@@ -15,7 +15,7 @@ public class GoogleSearchResultPage extends BasePage {
 
     public GoogleSearchImagePage toImage()
     {
-        click(imageButton);
+        click(IMAGE_BUTTON);
         return new GoogleSearchImagePage(driver);
     }
 }
