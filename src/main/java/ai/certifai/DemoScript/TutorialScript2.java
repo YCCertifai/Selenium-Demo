@@ -31,7 +31,7 @@ public class TutorialScript2 {
         driver.findElement(input).sendKeys("skymind" + Keys.RETURN);
 
         //define image button in result page
-        By imageBtn = By.xpath("//div[@class='MUFPAc']//child::a[contains(text(),'Images')]");
+        By imageBtn = By.xpath("//div[@class='MUFPAc']//descendant::a[contains(text(),'Images')]");
 
         //find the image button and click
         driver.findElement(imageBtn).click();

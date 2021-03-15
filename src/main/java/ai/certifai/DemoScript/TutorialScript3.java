@@ -50,7 +50,7 @@ public class TutorialScript3 {
         driver.findElement(input).sendKeys("skymind" + Keys.RETURN);
 
         //define image button in result page
-        By imageBtn = By.xpath("//div[@class='MUFPAc']//child::a[contains(text(),'Images')]");
+        By imageBtn = By.xpath("//div[@class='MUFPAc']//descendant::a[contains(text(),'Images')]");
 
         //wait for image button to be clickable
         WebElement imageBtnElement =  wait.until(ExpectedConditions.elementToBeClickable(imageBtn));
@@ -71,7 +71,7 @@ public class TutorialScript3 {
         By resultImages = By.xpath("//img[@class='rg_i Q4LuWd']");
 
         //define the enlarged image after click
-        By imageSource = By.cssSelector("div.BIB1wf img.n3VNCb");
+        By imageSource = By.cssSelector("div[class='tvh9oe BIB1wf'] img[class='n3VNCb']");
 
         //find list of target images
         List<WebElement> imgList = wait.until(d -> d.findElements(resultImages));
@@ -85,7 +85,7 @@ public class TutorialScript3 {
             wait.until(ExpectedConditions.elementToBeClickable(img));
 
             //click image
-            actions.click(img).perform();
+            actions.click(img).build().perform();
 
             //time to load image
             try{
