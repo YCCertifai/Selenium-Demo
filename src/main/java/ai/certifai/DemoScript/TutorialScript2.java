@@ -28,7 +28,7 @@ public class TutorialScript2 {
         By input = By.cssSelector("input[type='text']");
 
         //key in values into input textbox
-        driver.findElement(input).sendKeys("skymind" + Keys.RETURN);
+        driver.findElement(input).sendKeys("adidas" + Keys.RETURN);
 
         //define image button in result page
         By imageBtn = By.xpath("//div[@class='MUFPAc']//descendant::a[contains(text(),'Images')]");
